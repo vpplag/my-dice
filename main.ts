@@ -1,12 +1,6 @@
 let Roll = 0
 input.onButtonPressed(Button.A, function () {
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
+    basic.clearScreen()
 })
 input.onGesture(Gesture.Shake, function () {
     Roll = randint(1, 6)
@@ -18,53 +12,45 @@ input.onGesture(Gesture.Shake, function () {
             . . . . .
             . . . . .
             `)
+    } else if (Roll == 2) {
+        basic.showLeds(`
+            . . . . #
+            . . . . .
+            . . . . .
+            . . . . .
+            # . . . .
+            `)
+    } else if (Roll == 3) {
+        basic.showLeds(`
+            . . . . #
+            . . . . .
+            . . # . .
+            . . . . .
+            # . . . .
+            `)
+    } else if (Roll == 4) {
+        basic.showLeds(`
+            # . . . #
+            . . . . .
+            . . . . .
+            . . . . .
+            # . . . #
+            `)
+    } else if (Roll == 5) {
+        basic.showLeds(`
+            # . . . #
+            . . . . .
+            . . # . .
+            . . . . .
+            # . . . #
+            `)
     } else {
-        if (Roll == 2) {
-            basic.showLeds(`
-                . . . . #
-                . . . . .
-                . . . . .
-                . . . . .
-                # . . . .
-                `)
-        } else {
-            if (Roll == 3) {
-                basic.showLeds(`
-                    . . . . #
-                    . . . . .
-                    . . # . .
-                    . . . . .
-                    # . . . .
-                    `)
-            } else {
-                if (Roll == 4) {
-                    basic.showLeds(`
-                        # . . . #
-                        . . . . .
-                        . . . . .
-                        . . . . .
-                        # . . . #
-                        `)
-                } else {
-                    if (Roll == 5) {
-                        basic.showLeds(`
-                            # . . . #
-                            . . . . .
-                            . . # . .
-                            . . . . .
-                            # . . . #
-                            `)
-                    } else {
-                        basic.showLeds(`
-                            # . . . #
-                            . . . . .
-                            # . . . #
-                            . . . . .
-                            # . . . #
-                            `)
-                    }
-                }
-            }
-        }
+        basic.showLeds(`
+            # . . . #
+            . . . . .
+            # . . . #
+            . . . . .
+            # . . . #
+            `)
     }
 })
